@@ -9,10 +9,7 @@ class Author(models.Model):
         constraints = [
             models.UniqueConstraint(
                 fields=['first_name', 'middle_name', 'last_name'],
-                name='author_full_name'),
-            models.CheckConstraint(
-                check=models.Q(first_name is not None),
-                name='author_check_if_first_name_exists')
+                name='author_full_name')
         ]
 
     def __str__(self):
