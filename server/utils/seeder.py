@@ -2,6 +2,14 @@ from ..models import Author
 class SeederUtil:
     def seed(self):
         self.author()
+        author_names = list(
+            Author.objects.all().values_list(
+                'first_name',
+                flat=True)) + list(
+            Author.objects.all().values_list(
+                'middle_name',
+                flat=True))
+        print(author_names)
 
     def author(self):
         obj, created = Author.objects.get_or_create(
