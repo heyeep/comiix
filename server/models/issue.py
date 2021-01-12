@@ -18,8 +18,16 @@ class Issue(models.Model):
     publisher = models.ForeignKey(Publisher, on_delete=models.SET_DEFAULT, default=1)
     summary = models.TextField(default='None', max_length=500)
 
+    page_count = models.IntegerField(default=0)
+    year = models.IntegerField(default=1900)
+    month = models.IntegerField(default=1)
+    day = models.IntegerField(default=1)
+
     filename = models.CharField(default='None', max_length=250)
     upload = models.FileField(upload_to='uploads/')
+
+    comixology_id = models.CharField(default='None', max_length=25)
+    comicvine_id = models.CharField(default='None', max_length=25)
 
     read_direction = models.CharField(
         max_length=1,
