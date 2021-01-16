@@ -130,6 +130,6 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'America/Los_Angeles'
 
-CORS_ORIGIN_WHITELIST = (
-    'localhost:3000/'
-)
+CORS_ORIGIN_WHITELIST = [
+    'https://localhost:3000'
+]
