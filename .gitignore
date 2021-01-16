@@ -1,5 +1,4 @@
-**/
-comiix/__pycache__
+**/__pycache__
 
 server/migrations
 *.sqlite3
